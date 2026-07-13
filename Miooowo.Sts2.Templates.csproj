@@ -8,7 +8,7 @@
     <PackageTags>dotnet-new;templates;</PackageTags>
     <PackageProjectUrl>https://github.com/Miooowo/ModTemplate-StS2/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Miooowo/ModTemplate-StS2/</RepositoryUrl>
-    <PackageReleaseNotes>Rename package to Miooowo.Sts2.Templates, switch templates to RitsuLib defaults, and add NuGet publish automation.</PackageReleaseNotes>
+    <PackageReleaseNotes>Rename package to Miooowo.Sts2.Templates, switch templates to RitsuLib defaults, and use NuGet Trusted Publishing in GitHub Actions.</PackageReleaseNotes>
     
     <PackageType>Template</PackageType>
     <TargetFramework>net9.0</TargetFramework>

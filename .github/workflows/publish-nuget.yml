@@ -1,4 +1,5 @@
 name: Publish NuGet package
+# Requires a nuget.org Trusted Publishing policy bound to this repository/workflow.
 
 on:
   release:
@@ -16,6 +17,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write
 
 jobs:
   publish:
@@ -69,15 +71,26 @@ jobs:
 
           "${args[@]}"
 
-      - name: Push to NuGet
+      - name: Validate Trusted Publishing settings
         env:
-          NUGET_API_KEY: ${{ secrets.NUGET_API_KEY }}
+          NUGET_USER: ${{ secrets.NUGET_USER }}
         run: |
-          if [[ -z "${NUGET_API_KEY:-}" ]]; then
-            echo "NUGET_API_KEY secret is not configured."
+          if [[ -z "${NUGET_USER:-}" ]]; then
+            echo "NUGET_USER secret is not configured."
+            echo "Set NUGET_USER to your nuget.org profile name and configure Trusted Publishing on nuget.org."
             exit 1
           fi
 
+      - name: NuGet login (OIDC -> short-lived key)
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: ${{ secrets.NUGET_USER }}
+
+      - name: Push to NuGet
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: |
           dotnet nuget push "./artifacts/*.nupkg" \
             --api-key "$NUGET_API_KEY" \
             --source "https://api.nuget.org/v3/index.json" \
