@@ -15,6 +15,7 @@
         <!-- Diasble architecture mismatch warning; mods are ideally built for all platforms (MSIL)
              while your local StS2 version will be for your specific platform. -->
         <NoWarn>$(NoWarn);MSB3270</NoWarn> 
+        <CopyPdbToMods>false</CopyPdbToMods>
     </PropertyGroup>
 
     <ItemGroup Condition="Exists('$(Sts2DataDir)')" >
@@ -95,6 +96,10 @@
         <Message Text="Copying .dll and .json to mods folder." Importance="high" />
         <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
         <Copy SourceFiles="$(AssemblyName).json" DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
+        <Message Condition="'$(CopyPdbToMods)' == 'true'" Text="Copying .pdb to mods folder (CopyPdbToMods=true)." Importance="high" />
+        <Copy Condition="'$(CopyPdbToMods)' == 'true' and Exists('$(TargetDir)$(TargetName).pdb')"
+              SourceFiles="$(TargetDir)$(TargetName).pdb"
+              DestinationFolder="$(ModsPath)$(MSBuildProjectName)/" />
     </Target>
 
     <Target Name="CopyQuickPck" AfterTargets="PackPck" Condition="Exists('$(PckPackerOutputPath)') And '$(PckPackerSkipped)' != 'true'">
