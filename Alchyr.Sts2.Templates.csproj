@@ -1,12 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <PackageId>Alchyr.Sts2.Templates</PackageId>
+    <PackageId>Miooowo.Sts2.Templates</PackageId>
     <PackageVersion>2.5.0</PackageVersion>
-    <Title>Sts2 Mod Templates</Title>
-    <Authors>Alchyr</Authors>
+    <Title>Miooowo Sts2 Mod Templates</Title>
+    <Authors>Miooowo</Authors>
     <Description>Templates to use when creating a Slay the Spire 2 mod</Description>
     <PackageTags>dotnet-new;templates;</PackageTags>
-    <PackageProjectUrl>https://github.com/Alchyr/ModTemplate-StS2/</PackageProjectUrl>
+    <PackageProjectUrl>https://github.com/Miooowo/ModTemplate-StS2/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/Miooowo/ModTemplate-StS2/</RepositoryUrl>
     <PackageReleaseNotes>Switch template dependencies and localization analyzer defaults to RitsuLib</PackageReleaseNotes>
     
     <PackageType>Template</PackageType>
