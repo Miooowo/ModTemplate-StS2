@@ -1,8 +1,8 @@
-﻿using BaseLib.Abstracts;
-using BaseLib.Utils;
-using CharMod.CharModCode.Character;
+﻿using CharMod.CharModCode.Character;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace CharMod.CharModCode.Potions;
 
-[Pool(typeof(CharModPotionPool))]
-public abstract class CharModPotion : CustomPotionModel;
+[RegisterPotion(typeof(CharModPotionPool), Inherit = true)]
+public abstract class CharModPotion : ModPotionTemplate;

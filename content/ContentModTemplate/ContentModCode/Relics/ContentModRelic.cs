@@ -1,6 +1,5 @@
-﻿using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using ContentMod.ContentModCode.Extensions;
+﻿using ContentMod.ContentModCode.Extensions;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace ContentMod.ContentModCode.Relics;
 
@@ -10,10 +9,12 @@ namespace ContentMod.ContentModCode.Relics;
 /// This will generate a class that extends this one.
 /// You can also just create the class manually; just make sure to inherit from this class.
 /// </summary>
-public abstract class ContentModRelic : CustomRelicModel
+public abstract class ContentModRelic : ModRelicTemplate
 {
     //ContentMod/images/relics
-    public override string PackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".RelicImagePath();
-    protected override string PackedIconOutlinePath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}_outline.png".RelicImagePath();
-    protected override string BigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigRelicImagePath();
+    public override RelicAssetProfile AssetProfile => new(
+        IconPath: $"{GetType().Name}.png".RelicImagePath(),
+        IconOutlinePath: $"{GetType().Name}_outline.png".RelicImagePath(),
+        BigIconPath: $"{GetType().Name}.png".BigRelicImagePath()
+    );
 }
