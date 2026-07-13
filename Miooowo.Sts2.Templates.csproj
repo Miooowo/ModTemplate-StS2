@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <PackageId>Miooowo.Sts2.Templates</PackageId>
-    <PackageVersion>2.5.0</PackageVersion>
+    <PackageVersion>2.6.0</PackageVersion>
     <Title>Miooowo Sts2 Mod Templates</Title>
     <Authors>Miooowo</Authors>
     <Description>Templates to use when creating a Slay the Spire 2 mod</Description>
     <PackageTags>dotnet-new;templates;</PackageTags>
     <PackageProjectUrl>https://github.com/Miooowo/ModTemplate-StS2/</PackageProjectUrl>
     <RepositoryUrl>https://github.com/Miooowo/ModTemplate-StS2/</RepositoryUrl>
-    <PackageReleaseNotes>Switch template dependencies and localization analyzer defaults to RitsuLib</PackageReleaseNotes>
+    <PackageReleaseNotes>Rename package to Miooowo.Sts2.Templates, switch templates to RitsuLib defaults, and add NuGet publish automation.</PackageReleaseNotes>
     
     <PackageType>Template</PackageType>
     <TargetFramework>net9.0</TargetFramework>
