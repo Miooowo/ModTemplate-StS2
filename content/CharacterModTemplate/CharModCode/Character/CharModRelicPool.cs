@@ -1,13 +1,14 @@
-﻿using BaseLib.Abstracts;
-using CharMod.CharModCode.Extensions;
+﻿using CharMod.CharModCode.Extensions;
 using Godot;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace CharMod.CharModCode.Character;
 
-public class CharModRelicPool : CustomRelicPoolModel
+public class CharModRelicPool : TypeListRelicPoolModel
 {
-    public override Color LabOutlineColor => CharMod.Color;
+    public override string EnergyColorName => CharMod.CharacterId.ToLowerInvariant();
 
-    public override string BigEnergyIconPath => "charui/big_energy.png".ImagePath();
-    public override string TextEnergyIconPath => "charui/text_energy.png".ImagePath();
+    public override string? BigEnergyIconPath => "charui/big_energy.png".ImagePath();
+    public override string? TextEnergyIconPath => "charui/text_energy.png".ImagePath();
+    public override Color EnergyOutlineColor => CharMod.Color;
 }
