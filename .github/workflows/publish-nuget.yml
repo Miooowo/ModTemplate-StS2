@@ -1,0 +1,87 @@
+name: Publish NuGet package
+# Requires a nuget.org Trusted Publishing policy bound to this repository/workflow.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      package_version:
+        description: "Override PackageVersion (e.g. 2.6.1)"
+        required: false
+        type: string
+      release_notes:
+        description: "Override PackageReleaseNotes (single line recommended)"
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "9.0.x"
+
+      - name: Restore
+        run: dotnet restore "Miooowo.Sts2.Templates.csproj"
+
+      - name: Pack
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          version=""
+          notes=""
+
+          if [[ "${{ github.event_name }}" == "release" ]]; then
+            raw_tag="${{ github.event.release.tag_name }}"
+            version="${raw_tag#v}"
+            notes="${{ github.event.release.body }}"
+          else
+            version="${{ inputs.package_version }}"
+            notes="${{ inputs.release_notes }}"
+          fi
+
+          # NuGet release notes are easier to consume as one line.
+          notes="${notes//$'\r'/}"
+          notes="${notes//$'\n'/ }"
+
+          args=(
+            dotnet pack "Miooowo.Sts2.Templates.csproj"
+            -c Release
+            -o "./artifacts"
+          )
+
+          if [[ -n "$version" ]]; then
+            args+=("-p:PackageVersion=$version")
+          fi
+
+          if [[ -n "$notes" ]]; then
+            args+=("-p:PackageReleaseNotes=$notes")
+          fi
+
+          "${args[@]}"
+
+      - name: NuGet login (OIDC -> short-lived key)
+        id: login
+        uses: NuGet/login@v1
+        with:
+          user: Miooowo
+
+      - name: Push to NuGet
+        env:
+          NUGET_API_KEY: ${{ steps.login.outputs.NUGET_API_KEY }}
+        run: |
+          dotnet nuget push "./artifacts/*.nupkg" \
+            --api-key "$NUGET_API_KEY" \
+            --source "https://api.nuget.org/v3/index.json" \
+            --skip-duplicate
