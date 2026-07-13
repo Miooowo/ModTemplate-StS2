@@ -19,9 +19,13 @@ public abstract class CharModCard(int cost, CardType type, CardRarity rarity, Ta
     //Image size:
     //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
     //Full art: 606x852
-    public override CardAssetProfile AssetProfile => new(
-        PortraitPath: $"{GetType().Name}.png".CardImagePath(),
-        BigPortraitPath: $"{GetType().Name}.png".BigCardImagePath(),
-        BetaPortraitPath: $"beta/{GetType().Name}.png".CardImagePath()
-    );
+    public override string CustomPortraitPath => $"{GetType().Name}.png".BigCardImagePath();
+
+    //Smaller variants of card images for efficiency:
+    //Smaller variant of fullart: 250x350
+    //Smaller variant of normalart: 250x190
+
+    //Uses card_portraits/card_name.png as image path. These should be smaller images.
+    public override string PortraitPath => $"{GetType().Name}.png".CardImagePath();
+    public override string BetaPortraitPath => $"beta/{GetType().Name}.png".CardImagePath();
 }
