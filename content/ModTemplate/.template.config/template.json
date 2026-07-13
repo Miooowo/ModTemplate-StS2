@@ -1,7 +1,7 @@
 {
     "author": "Alchyr",
     "name": "Empty Slay the Spire 2 Mod",
-    "description": "An empty Slay the Spire 2 mod with BaseLib as a dependency.",
+    "description": "An empty Slay the Spire 2 mod with RitsuLib as a dependency.",
     "identity": "Alchyr.Sts2Mod",
     "shortName": "alchyrsts2mod",
     "tags": {

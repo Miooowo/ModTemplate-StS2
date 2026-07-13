@@ -1,7 +1,7 @@
 {
     "author": "Alchyr",
     "name": "Slay the Spire 2 Character",
-    "description": "A Slay the Spire 2 character mod relying on BaseLib",
+    "description": "A Slay the Spire 2 character mod relying on RitsuLib",
     "identity": "Alchyr.Sts2CharMod",
     "shortName": "alchyrsts2charmod",
     "tags": {

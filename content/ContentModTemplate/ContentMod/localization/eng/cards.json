@@ -1,3 +1,4 @@
 {
-  
+  "CONTENTMOD_CARD_CONTENT_MOD_CARD.title": "ContentMod Test Card",
+  "CONTENTMOD_CARD_CONTENT_MOD_CARD.description": "Deal {Damage:diff()} damage."
 }
