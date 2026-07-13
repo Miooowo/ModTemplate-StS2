@@ -3,7 +3,7 @@
     "name": "Slay the Spire 2 Content",
     "description": "A Slay the Spire 2 content mod relying on RitsuLib",
     "identity": "Alchyr.Sts2ContentMod",
-    "shortName": "alchyrsts2contentmod",
+    "shortName": "miosts2contentmod",
     "tags": {
         "language": "C#",
         "type": "project"
