@@ -1,7 +1,7 @@
-﻿using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using ContentMod.ContentModCode.Extensions;
+﻿using ContentMod.ContentModCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Powers;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace ContentMod.ContentModCode.Powers;
 
@@ -11,11 +11,14 @@ namespace ContentMod.ContentModCode.Powers;
 /// This will generate a class that extends this one.
 /// You can also just create the class manually; just make sure to inherit from this class.
 /// </summary>
-public abstract class ContentModPower : CustomPowerModel
+[RegisterPower(Inherit = true)]
+public abstract class ContentModPower : ModPowerTemplate
 {
     //Loads from ContentMod/images/powers/your_power.png
-    public override string CustomPackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".PowerImagePath();
-    public override string CustomBigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigPowerImagePath();
+    public override PowerAssetProfile AssetProfile => new(
+        IconPath: $"{GetType().Name}.png".PowerImagePath(),
+        BigIconPath: $"{GetType().Name}.png".BigPowerImagePath()
+    );
 
     /// <summary>
     /// Whether this power is a buff or debuff.

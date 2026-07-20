@@ -1,8 +1,7 @@
-﻿using BaseLib.Abstracts;
-using BaseLib.Extensions;
-using BaseLib.Utils;
-using CharMod.CharModCode.Character;
+﻿using CharMod.CharModCode.Character;
 using CharMod.CharModCode.Extensions;
+using STS2RitsuLib.Interop.AutoRegistration;
+using STS2RitsuLib.Scaffolding.Content;
 
 namespace CharMod.CharModCode.Relics;
 
@@ -12,13 +11,15 @@ namespace CharMod.CharModCode.Relics;
 /// This will generate a class that extends this one.
 /// You can also just create the class manually; just make sure to inherit from this class.
 ///
-/// The [Pool] annotation marks this relic as being tied to your specific character. Inheriting from this class means
+/// The [RegisterRelic] annotation marks this relic as being tied to your specific character. Inheriting from this class means
 /// that your relics don't need to invidually say which pool they should be in.
 /// </summary>
-[Pool(typeof(CharModRelicPool))]
-public abstract class CharModRelic : CustomRelicModel
+[RegisterRelic(typeof(CharModRelicPool), Inherit = true)]
+public abstract class CharModRelic : ModRelicTemplate
 {
-    public override string PackedIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".RelicImagePath();
-    protected override string PackedIconOutlinePath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}_outline.png".RelicImagePath();
-    protected override string BigIconPath => $"{Id.Entry.RemovePrefix().ToLowerInvariant()}.png".BigRelicImagePath();
+    public override RelicAssetProfile AssetProfile => new(
+        IconPath: $"{GetType().Name}.png".RelicImagePath(),
+        IconOutlinePath: $"{GetType().Name}_outline.png".RelicImagePath(),
+        BigIconPath: $"{GetType().Name}.png".BigRelicImagePath()
+    );
 }

@@ -3,7 +3,7 @@
     "name": "Empty Slay the Spire 2 Mod",
     "description": "An empty Slay the Spire 2 mod with RitsuLib as a dependency.",
     "identity": "Miooowo.Sts2Mod",
-    "shortName": "miooowosts2mod",
+    "shortName": "miosts2mod",
     "tags": {
         "language": "C#",
         "type": "project"
