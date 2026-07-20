@@ -1,8 +1,8 @@
 {
-    "author": "Alchyr",
+    "author": "Miooowo",
     "name": "Slay the Spire 2 Character",
     "description": "A Slay the Spire 2 character mod relying on RitsuLib",
-    "identity": "Alchyr.Sts2CharMod",
+    "identity": "Miooowo.Sts2CharMod",
     "shortName": "miosts2charmod",
     "tags": {
         "language": "C#",

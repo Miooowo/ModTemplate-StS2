@@ -1,8 +1,8 @@
 {
-    "author": "Alchyr",
+    "author": "Miooowo",
     "name": "Slay the Spire 2 Content",
     "description": "A Slay the Spire 2 content mod relying on RitsuLib",
-    "identity": "Alchyr.Sts2ContentMod",
+    "identity": "Miooowo.Sts2ContentMod",
     "shortName": "miosts2contentmod",
     "tags": {
         "language": "C#",
