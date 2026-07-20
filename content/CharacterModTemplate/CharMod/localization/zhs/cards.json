@@ -1,0 +1,10 @@
+{
+  "CHAR_MOD_CARD_CHAR_MOD_STRIKE.title": "模板打击",
+  "CHAR_MOD_CARD_CHAR_MOD_STRIKE.description": "造成{Damage:diff()}点伤害。",
+  "CHAR_MOD_CARD_CHAR_MOD_DEFEND.title": "模板防御",
+  "CHAR_MOD_CARD_CHAR_MOD_DEFEND.description": "获得{Block:diff()}点格挡。",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_CARD.title": "牙齿触发",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_CARD.description": "获得{Block:diff()}点格挡。",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_ANCIENT_CARD.title": "牙齿觉醒",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_ANCIENT_CARD.description": "造成{Damage:diff()}点伤害。"
+}

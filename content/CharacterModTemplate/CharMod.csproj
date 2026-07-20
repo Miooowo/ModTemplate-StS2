@@ -1,4 +1,4 @@
-﻿<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
+<Project Sdk="Godot.NET.Sdk/4.5.1" InitialTargets="CheckDependencyPaths">
     <Import Project=".\Sts2PathDiscovery.props"/>
     <PropertyGroup>
         <TargetFramework>net9.0</TargetFramework>
@@ -72,6 +72,15 @@
         <Error
                 Text=" Slay the Spire 2 data not found at path '$(Sts2DataDir)'"
                 Condition="'$(Sts2DataDir)' == '' or !Exists('$(Sts2DataDir)')" />
+    </Target>
+
+    <Target Name="ValidateLocalizationPresence" BeforeTargets="BeforeBuild">
+        <ItemGroup>
+            <LocalizationJsonFiles Include="CharMod/localization/**/*.json" />
+        </ItemGroup>
+        <Error
+                Text=" No localization JSON files found under 'CharMod/localization'. Add at least one file, e.g. CharMod/localization/eng/cards.json."
+                Condition="'@(LocalizationJsonFiles)' == ''" />
     </Target>
 
     <Target Name="UpdateDependencyVersions" BeforeTargets="BeforeBuild" Condition="Exists('.godot/mono/temp/obj/project.assets.json')">

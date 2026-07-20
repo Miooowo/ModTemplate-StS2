@@ -1,4 +1,10 @@
 {
-  "CHARMOD_CARD_CHAR_MOD_CARD.title": "CharMod Test Card",
-  "CHARMOD_CARD_CHAR_MOD_CARD.description": "Deal {Damage:diff()} damage."
+  "CHAR_MOD_CARD_CHAR_MOD_STRIKE.title": "Template Strike",
+  "CHAR_MOD_CARD_CHAR_MOD_STRIKE.description": "Deal {Damage:diff()} damage.",
+  "CHAR_MOD_CARD_CHAR_MOD_DEFEND.title": "Template Defend",
+  "CHAR_MOD_CARD_CHAR_MOD_DEFEND.description": "Gain {Block:diff()} Block.",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_CARD.title": "Tooth Trigger",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_CARD.description": "Gain {Block:diff()} Block.",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_ANCIENT_CARD.title": "Tooth Awakened",
+  "CHAR_MOD_CARD_CHAR_MOD_TOOTH_ANCIENT_CARD.description": "Deal {Damage:diff()} damage."
 }
