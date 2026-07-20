@@ -4,4 +4,4 @@ Localization keys for model content should follow the RitsuLib analyzer format:
 `{MODID}_{CATEGORY}_{ORIGINAL_ID}.title` and `{MODID}_{CATEGORY}_{ORIGINAL_ID}.description`.
 Example: `TEST_CARD_TEST_CARD.title`.
 
-See the [wiki](https://github.com/Alchyr/ModTemplate-StS2/wiki) to get started.
+See the [wiki](https://github.com/Miooowo/ModTemplate-StS2/wiki) to get started.

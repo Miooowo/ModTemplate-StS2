@@ -1,3 +1,3 @@
 A template for an empty Slay the Spire 2 mod with RitsuLib as a dependency.
 
-See the [wiki](https://github.com/Alchyr/ModTemplate-StS2/wiki) to get started.
+See the [wiki](https://github.com/Miooowo/ModTemplate-StS2/wiki) to get started.
