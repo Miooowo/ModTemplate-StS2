@@ -1,3 +1,9 @@
 {
-  
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.title": "Template Core",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.description": "At the start of your turn, draw {Cards} card.",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.flavor": "A starter relic for template testing.",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.title": "Template Core+",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.description": "At the start of your turn, draw {Cards} cards.",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.flavor": "A refined relic form used for Orobas mapping tests.",
+  "SEA_GLASS.CHAR_MOD_CHARACTER_CHAR_MOD.title": "Template Sea Glass"
 }

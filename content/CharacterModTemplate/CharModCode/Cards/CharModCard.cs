@@ -1,4 +1,4 @@
-﻿using CharMod.CharModCode.Character;
+using CharMod.CharModCode.Character;
 using CharMod.CharModCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Cards;
 using STS2RitsuLib.Interop.AutoRegistration;
@@ -7,25 +7,19 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace CharMod.CharModCode.Cards;
 
 /// <summary>
-/// This is the base class for your mod's cards, which is set up to load the card's images from your mod's resources.
-/// When creating a card, right click the Cards folder and create a new file with the Custom Card template.
-/// This will generate a class that extends this one.
-/// You can also just create the class manually; just make sure to inherit from this class.
+/// 角色卡牌基类：
+/// - 自动绑定到角色卡池
+/// - 统一约定卡图路径和缺图回退逻辑
+/// 新建卡牌时建议继承此类。
 /// </summary>
 [RegisterCard(typeof(CharModCardPool), Inherit = true)]
 public abstract class CharModCard(int cost, CardType type, CardRarity rarity, TargetType target) :
     ModCardTemplate(cost, type, rarity, target)
 {
-    //Image size:
-    //Normal art: 1000x760 (Using 500x380 should also work, it will simply be scaled.)
-    //Full art: 606x852
+    // 大图（展示/详情）建议尺寸：606x852。
     public override string CustomPortraitPath => $"{GetType().Name}.png".BigCardImagePath();
 
-    //Smaller variants of card images for efficiency:
-    //Smaller variant of fullart: 250x350
-    //Smaller variant of normalart: 250x190
-
-    //Uses card_portraits/card_name.png as image path. These should be smaller images.
+    // 小图（手牌/战斗）建议尺寸：250x190（或更高分辨率由引擎缩放）。
     public override string PortraitPath => $"{GetType().Name}.png".CardImagePath();
     public override string BetaPortraitPath => $"beta/{GetType().Name}.png".CardImagePath();
 }

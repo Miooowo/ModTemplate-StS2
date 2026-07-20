@@ -1,4 +1,4 @@
-﻿using CharMod.CharModCode.Extensions;
+using CharMod.CharModCode.Extensions;
 using MegaCrit.Sts2.Core.Entities.Powers;
 using STS2RitsuLib.Interop.AutoRegistration;
 using STS2RitsuLib.Scaffolding.Content;
@@ -6,29 +6,29 @@ using STS2RitsuLib.Scaffolding.Content;
 namespace CharMod.CharModCode.Powers;
 
 /// <summary>
-/// This is the base class for your mod's powers, which is set up to load the power's images from your mod's resources.
-/// When creating a power, right click the Powers folder and create a new file with the Custom Power template.
-/// This will generate a class that extends this one.
-/// You can also just create the class manually; just make sure to inherit from this class.
+/// 角色能力（Power）基类：
+/// - 自动注册能力类型
+/// - 统一配置图标路径
 /// </summary>
 [RegisterPower(Inherit = true)]
 public abstract class CharModPower : ModPowerTemplate
 {
-    //Loads from CharMod/images/powers/your_power.png
+    // 默认从 CharMod/images/powers/{类名}.png 加载图标。
     public override PowerAssetProfile AssetProfile => new(
         IconPath: $"{GetType().Name}.png".PowerImagePath(),
         BigIconPath: $"{GetType().Name}.png".BigPowerImagePath()
     );
 
     /// <summary>
-    /// Whether this power is a buff or debuff.
+    /// 能力类型：增益（Buff）或减益（Debuff）。
     /// </summary>
     public abstract override PowerType Type { get; }
     
     /// <summary>
-    /// How this power stacks if reapplied. Counter is the most common type, where applying the power again just
-    /// adds to the amount. Single means the power does not stack, like Barricade. None functions identically to
-    /// Single, but you're suggested to use Single as it is more explicit about how it will work.
+    /// 叠加方式：
+    /// - Counter：重复施加会累加
+    /// - Single：不可叠加（常用于唯一效果）
+    /// - None：行为近似 Single，一般更推荐显式使用 Single
     /// </summary>
     public abstract override PowerStackType StackType { get; }
 }

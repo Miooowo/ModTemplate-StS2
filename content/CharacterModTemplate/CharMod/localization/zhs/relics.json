@@ -1,0 +1,9 @@
+{
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.title": "模板核心",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.description": "在你的回合开始时，抽{Cards}张牌。",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC.flavor": "用于模板测试的初始遗物。",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.title": "模板核心+",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.description": "在你的回合开始时，抽{Cards}张牌。",
+  "CHAR_MOD_RELIC_CHAR_MOD_STARTER_RELIC_REFINED.flavor": "用于欧洛巴斯映射测试的强化遗物。",
+  "SEA_GLASS.CHAR_MOD_CHARACTER_CHAR_MOD.title": "模板海玻璃"
+}

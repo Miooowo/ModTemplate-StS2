@@ -55,6 +55,13 @@
             ],
             "replaces": "{NullableChecks}",
             "defaultValue": "enable"
+        },
+        "StrictLocalizationValidation":{
+            "type": "parameter",
+            "dataType":"bool",
+            "defaultValue": "false",
+            "replaces": "{StrictLocalizationValidation}",
+            "description": "Enable strict localization key validation at runtime. If true, each '.title' key must have a matching '.description' key and vice versa."
         }
     }
 }

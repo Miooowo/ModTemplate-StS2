@@ -1,0 +1,21 @@
+{
+  "CHAR_MOD_CHARACTER_CHAR_MOD.title": "模板角色",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.titleObject": "模板角色",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.description": "一个可直接用于测试的最小角色模板。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.pronounSubject": "TA",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.pronounObject": "TA",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.pronounPossessive": "TA的",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.possessiveAdjective": "TA的",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.cardsModifierTitle": "模板卡牌",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.cardsModifierDescription": "模板卡牌会出现在奖励和商店中。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.aromaPrinciple": "……",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.banter.alive.endTurnPing": "……",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.banter.dead.endTurnPing": "……",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.defeatMessage": "被击败了。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.eventDeathPrevention": "还没结束。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.flavor": "模板角色。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.goldMonologue": "……",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.selectMessage": "准备就绪。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.unlockText": "使用 {Prerequisite} 进行一局游戏以解锁该角色。",
+  "CHAR_MOD_CHARACTER_CHAR_MOD.victoryMessage": "胜利。"
+}
